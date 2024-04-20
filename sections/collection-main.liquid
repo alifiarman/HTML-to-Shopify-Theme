@@ -1,0 +1,64 @@
+{% paginate collection.products by 9 %}
+    <div class="container">
+       <div class="row collection__main_wrapper" data-handle="{{collection.handle}}">
+          <div class="col-xl-3 col-lg-4">
+                {% render 'collection-sidebar' collections:collections %}
+          </div>
+          <div class="col-xl-9 col-lg-8">
+             <div class="tp-shop-main-wrapper">
+                
+                {% render 'collection-top' result: collection %}
+
+                <div class="tp-shop-items-wrapper tp-shop-item-primary">
+                   <div class="tab-content" id="productTabContent">
+                      <div class="tab-pane fade show active" id="grid-tab-pane" role="tabpanel" aria-labelledby="grid-tab" tabindex="0">
+                         <div class="row infinite-container">
+
+                                {% for product in collection.products %}
+                                    {% render 'product-card' product:product %}
+                                {% else %}
+                                    <h2>Not Found Product</h2>
+                                {% endfor %}
+
+                         </div>
+                      </div>
+                      <div class="tab-pane fade" id="list-tab-pane" role="tabpanel" aria-labelledby="list-tab" tabindex="0">
+                         <div class="tp-shop-list-wrapper tp-shop-item-primary mb-70">
+                            <div class="row">
+                               <div class="col-xl-12">
+
+                                    {% for product in collection.products %}
+                                        {% render 'product-cart-vertical' product:product %}
+                                    {% else %}
+                                        <h2>Not Found Product</h2>
+                                    {% endfor %}
+
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                    </div>                            
+                </div>
+
+                    {% render 'paginate' paginate:paginate %}
+             </div>
+          </div>
+       </div>
+    </div>
+{% endpaginate %}
+
+
+ {% schema %}
+    {
+        "name": "Collection Main",
+        "class": "tp-shop-area pb-120",
+        "settings": [
+
+        ],
+        "presets": [
+            {
+                "name": "Collection Main"
+            }
+        ]
+    }
+ {% endschema %}

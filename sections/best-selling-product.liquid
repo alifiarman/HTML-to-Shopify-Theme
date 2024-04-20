@@ -1,0 +1,91 @@
+
+
+{% liquid
+    assign s = section.settings
+    assign heading = s.heading
+    assign sub_h = s.sub_heading
+    assign p = s.product__lists
+    assign btn = s.btn_txt
+    assign url = s.btn_url
+%}
+
+
+    <div class="container">
+       <div class="row">
+          <div class="col-xl-12">
+             <div class="tp-section-title-wrapper-2 mb-50">
+                {% if sub_h != blank %}
+                    <span class="tp-section-title-pre-2">
+                    {{sub_h}}
+                    <svg width="82" height="22" viewBox="0 0 82 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M81 14.5798C0.890564 -8.05914 -5.81154 0.0503902 5.00322 21" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-miterlimit="3.8637" stroke-linecap="round"/>
+                    </svg>
+                    </span>
+                {% endif %}
+                <h3 class="tp-section-title-2">{{heading}}</h3>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+
+        {%  for product in p %}  
+
+          {% render 'product-card' product:product %}
+
+        {% endfor %}
+
+       </div>
+       <div class="row">
+          <div class="col-xl-12">
+             <div class="tp-seller-more text-center mt-10">
+                <a href="{{url}}" class="tp-btn tp-btn-border tp-btn-border-sm">{{btn}}</a>
+             </div>
+          </div>
+       </div>
+    </div>
+
+
+
+{% schema %}
+    {
+        "name": "Best Selling",
+        "tag": "section",
+        "class":"tp-seller-area pb-140" ,
+        "settings": [
+            {
+               "type": "text",
+               "id": "heading",
+               "label": "Heading",
+               "default": "This Week's Featured"
+            },
+            {
+               "type": "text",
+               "id": "sub_heading",
+               "label": "Sub Heading",
+               "default": "Best Seller This Week’s"
+            },
+            {
+                "type": "product_list",
+                "id": "product__lists",
+                "label": "Select Product",
+                "limit": 4
+            },
+            {
+                "type": "text",
+                "id": "btn_txt",
+                "label": "Buton Text",
+                "default": "Shop All Product"
+            },
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Button URL"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Best Selling"
+            }
+        ]
+    }
+{% endschema %}

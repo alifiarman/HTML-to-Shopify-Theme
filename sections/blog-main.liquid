@@ -1,0 +1,166 @@
+{% paginate blog.articles by 2 %}
+    {% assign article = blog.articles %}
+
+
+<section class="tp-postbox-area pt-120 pb-120">
+    <div class="container">
+        {% if article != blank %}
+       <div class="row">
+          <div class="col-xl-9 col-lg-8">
+             <div class="tp-postbox-wrapper pr-50">
+                {% for article in blog.articles %}
+                    <article class="tp-postbox-item format-image mb-50 transition-3">
+                    {% if article.image %}
+                         <div class="tp-postbox-thumb w-img">
+                            <a href="{{ article.url }}">
+                                <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.title }}">
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="tp-postbox-content">
+                        <div class="tp-postbox-meta">
+                            <span><i class="far fa-calendar-check"></i>{{ article.published_at | date: '%b %d, %y'  }}</span>
+                            <span><a href="#"><i class="far fa-user"></i> {{ article.author }}</a></span>
+                            <span><a href="#"><i class="fal fa-comments"></i> {{ article.comments_count }} Comments</a></span>
+                        </div>
+                        <h3 class="tp-postbox-title">
+                            <a href="{{ article.url }}">{{article.title}}</a>
+                        </h3>
+                        <div class="tp-postbox-text">
+                            <p>{{ article.excerpt }}[…]</p>
+                        </div>
+                        <div class="tp-postbox-read-more">
+                            <a href="{{ article.url }}" class="tp-btn">Read More</a>                            
+                        </div>
+                    </div>
+                    </article>
+                    {% if forloop.index == 2 and paginate.current_page == 1 %}
+                        <article class="tp-postbox-item format-quote mb-50 transition-3">
+                    <div class="tp-postbox-quote">
+                        <blockquote>
+                            <p>{{ section.settings.featured_heading }}
+                                <cite>{{ section.settings.featured_aouthor }}</cite>
+                            </p>
+                        </blockquote>
+                    </div>
+                        </article>
+                    {% endif %}
+                {% endfor %}
+
+                <div class="tp-blog-pagination mt-50">
+                    {% render 'paginate' paginate:paginate %}
+                </div>
+
+             </div>
+          </div>
+          <div class="col-xl-3 col-lg-4">
+             <div class="tp-sidebar-wrapper tp-sidebar-ml--24">
+                <div class="tp-sidebar-widget mb-35">
+                   <div class="tp-sidebar-search">
+                      <form action="#">
+                         <div class="tp-sidebar-search-input">
+                            <input type="text" placeholder="Search...">
+                            <button type="submit">
+                               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M8.11111 15.2222C12.0385 15.2222 15.2222 12.0385 15.2222 8.11111C15.2222 4.18375 12.0385 1 8.11111 1C4.18375 1 1 4.18375 1 8.11111C1 12.0385 4.18375 15.2222 8.11111 15.2222Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M16.9995 17L13.1328 13.1333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                               </svg>
+                            </button>
+                         </div>
+                      </form>
+                   </div>
+                </div>
+
+                <!-- latest post start -->
+                <div class="tp-sidebar-widget mb-35">
+                   <h3 class="tp-sidebar-widget-title">{{ section.settings.sidber_heading }}</h3>
+                   <div class="tp-sidebar-widget-content">
+                      <div class="tp-sidebar-blog-item-wrapper">
+                        {% for latest_post in blog.articles %}
+                            <div class="tp-sidebar-blog-item d-flex align-items-center">
+                            <div class="tp-sidebar-blog-thumb">
+                                {% if latest_post.image %}
+                                    <a href="{{latest_post.url}}">
+                                        <img src="{{latest_post.image | img_url: 'master'}}" alt="">
+                                    </a>
+                                {% endif %}
+
+                            </div>
+                            <div class="tp-sidebar-blog-content">
+                               <div class="tp-sidebar-blog-meta">
+                                  <span>{{latest_post.published_at | date: '%b %d, %y'}}</span>
+                               </div>
+                               <h3 class="tp-sidebar-blog-title">
+                                  <a href="{{latest_post.url}}">{{latest_post.title}}</a>
+                               </h3>
+                            </div>
+                         </div>
+                        {% endfor %}
+
+                      </div>
+                   </div>
+                </div>
+                <!-- latest post end -->
+
+                <!-- tag cloud start -->
+                <div class="tp-sidebar-widget mb-35">
+                   <h3 class="tp-sidebar-widget-title">{{ section.settings.blog_tags }}</h3>
+                   <div class="tp-sidebar-widget-content tagcloud">
+                    {% for tag in blog.all_tags %}
+                        <a href="{{tag.url}}">{{ tag.title }}</a>
+                    {% endfor %}
+                   </div>
+                </div>
+                <!-- tag cloud end -->
+
+             </div>
+          </div>
+       </div>
+       {% else %}
+                <h2> This Store Have No Article/Blog</h2>
+        {% endif %}
+    </div>
+ </section>
+{% endpaginate %}
+ {% schema %}
+    {
+        "name": "Blog Main",
+        "settings": [
+            {
+                "type": "text",
+                "id": "sidber_heading",
+                "label": "Side Latest Posts Heading",
+                "default": "Latest Posts"
+            },
+            {
+                "type": "text",
+                "id": "blog_tags",
+                "label": "Blog Tags Heading",
+                "default": "Popular Tags"
+            },
+            {
+                "type": "header",
+                "content": "Featured Banner Part"
+            },
+            {
+                "type": "text",
+                "id": "featured_heading",
+                "label": "Featured Heading",
+                "default": "Only one thing is impossible for God: To find any sense in any copyright law on the planet.",
+                "placeholder": "Only one thing is..."
+            },
+            {
+                "type": "text",
+                "id": "featured_aouthor",
+                "label": "Featured Aouthor",
+                "default": "Md.Arman Hossen",
+                "placeholder": "Arman..."
+            }
+        ],
+        "presets": [
+            {
+                "name": "Blog Main"
+            }
+        ]
+    }
+ {% endschema %}

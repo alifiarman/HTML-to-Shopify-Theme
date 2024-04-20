@@ -1,0 +1,28 @@
+<section class="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay breadcrumb__style-3" data-background="{{ section.settings.bg_image | img_url: 'master' }}">
+<div class="container">
+   <div class="row">
+      <div class="col-xxl-12">
+         <div class="breadcrumb__content text-center p-relative z-index-1">
+            <h3 class="breadcrumb__title">{{ blog.title }}</h3>
+            <div class="breadcrumb__list">
+               <span><a href="{{ shop.url }}">Home</a></span>
+               <span>{{ blog.title }}</span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</section>
+
+{% schema %}
+    {
+        "name": "Bolg Top",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            }
+        ]
+    }
+{% endschema %}

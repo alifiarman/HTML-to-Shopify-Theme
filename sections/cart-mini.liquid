@@ -1,0 +1,91 @@
+{% liquid
+   assign s = section.settings
+   assign free_s_amount = s.free_shipping_id
+   assign cart_amount = cart.total_price |divided_by: 100
+   assign deu_amount = free_s_amount | minus: cart_amount
+   assign goal_amount = cart_amount | times: 100
+   assign progress = goal_amount | divided_by: section.settings.free_shipping_id
+%}
+
+
+<div class="cartmini__area">
+    <div class="cartmini__wrapper d-flex justify-content-between flex-column">
+        <div class="cartmini__top-wrapper">
+            <div class="cartmini__top p-relative">
+                <div class="cartmini__top-title">
+                    <h4>Shopping cart</h4>
+                </div>
+                <div class="cartmini__close">
+                    <button type="button" class="cartmini__close-btn cartmini-close-btn"><i class="fal fa-times"></i></button>
+                </div>
+            </div>
+            <div class="cartmini__shipping">
+                    {% if deu_amount > 0 %}
+                        <p> You are <span>{{cart.currency.symbol}}{{ deu_amount }}</span> away from FREE SHIPPING </p>
+
+                    {% else %}
+                    <p> Hurray! You Achive <span>FREE SHIPPING </span></p>
+                    {% endif %}
+                    
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" data-width="{{progress}}%" style="width: {{progress}}%;" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>                   
+            </div>
+                {% if cart == empty? %}
+                    <div class="cartmini__empty text-center d-none">
+                        <img src="assets/img/product/cartmini/empty-cart.png" alt="">
+                        <p>Your Cart is empty</p>
+                        <a href="shop.html" class="tp-btn">Go to Shop</a>
+                    </div>
+                {% else %}
+                    <div class="cartmini__widget">
+                        {% for item in cart.items %}
+                            <div class="cartmini__widget-item">
+                                <div class="cartmini__thumb">
+                                <a href="{{ item.url }}">
+                                    <img src="{{ item.image | img_url: 'master' }}" alt="">
+                                </a>
+                                </div>
+                                <div class="cartmini__content">
+                                <h5 class="cartmini__title"><a href="{{ item.url }}">{{ item.product.title }}</a></h5>
+                                <div class="cartmini__price-wrapper">
+                                    <span class="cartmini__price">{{ item.price | money }}</span>
+                                    <span class="cartmini__quantity">x{{item.quantity}}</span>
+                                </div>
+                                </div>
+
+                                <button class="cartmini__del" data-id="{{item.variant.id}}" onClick="removeItem(event, this)">
+                                    <i class="fa-regular fa-xmark"></i>
+                                </button>
+
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+        </div>
+        <div class="cartmini__checkout">
+            <div class="cartmini__checkout-title mb-30">
+                <h4>Subtotal:</h4>
+                <span>{{ cart.total_price | money }}</span>
+            </div>
+            <div class="cartmini__checkout-btn">
+                <a href="/cart" class="tp-btn mb-10 w-100"> view cart</a>
+                <a href="/checkout" class="tp-btn tp-btn-border w-100"> checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Cart Mini",
+        "settings": [
+            {
+               "type": "number",
+               "id": "free_shipping_id",
+               "label": "Free Shipping Amount",
+               "default": 1000
+            }
+        ]
+    }
+{% endschema %}

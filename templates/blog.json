@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-top",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/breadcrumb-bg-1.webp"
+      }
+    },
+    "d4bcbfbf-ac33-4b1a-a929-5e5536274441": {
+      "type": "blog-main",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "d4bcbfbf-ac33-4b1a-a929-5e5536274441"
+  ]
+}

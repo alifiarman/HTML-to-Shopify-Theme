@@ -1,0 +1,30 @@
+
+{% if section.settings.on %}
+<div class="announcement__inner">
+  {{section.settings.text}}
+  <div class="announcement__close">
+    {% render 'icon-close' %}
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",  
+  "tag": "div",
+  "class": "announcement",
+  "settings": [
+  {
+    "type": "checkbox",
+    "id": "on",
+    "default": true,
+    "label": "Show announcement"
+  },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:sections.header.settings.enable_sticky_header.label"
+    }
+  ]
+}
+{% endschema %}

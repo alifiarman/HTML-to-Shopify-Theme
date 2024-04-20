@@ -1,0 +1,282 @@
+<style>
+        .testimonial__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 53px;
+            padding: 30px 10px;
+            animation: {% if section.settings.slide_direction == "to_left" %}move {%  elsif section.settings.slide_direction == "to_right" %}move_invers {% endif %} 60s linear infinite;
+        }
+        .testimonials__wrapper:hover .testimonial__inner{
+            animation-play-state: paused;
+        }
+        .testimonials__wrapper {
+            display: flex;
+            column-gap: 45px;
+            overflow-x: scroll;
+        }
+        .testimonials__wrapper::-webkit-scrollbar{
+            display: None;
+        }
+        .testimonial__media {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+        }
+        .testimonial__media img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #000;
+            filter: drop-shadow(3px 3px 0px #09f7ff);
+        }
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            min-width: 450px;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            background: #fff;
+            filter: drop-shadow(5px 5px 0px {{ section.settings.shadow_color }});
+            transition: all 0.2s linear;
+        }
+        .testimonial:hover{
+            filter: drop-shadow(8px 8px 0px {{ section.settings.shadow_hover_color }});
+        }
+        .testimonila__name span {
+            font-size: 21px;
+            font-weight: 500;
+        }
+        .testimonila__name {
+            margin-bottom: 11px;
+        }
+        .testimonial__content {
+            font-size: 16px;
+        }
+        .testimonial__content p {
+            font-size: 17px;
+            color: #000;
+        }
+        .star_mark svg {
+            width: 21px;
+        }
+        @keyframes move {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes move_invers {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        } 
+        @media (max-width:768px){
+            .testimonial__inner {
+                column-gap: 26px;
+            }
+            .testimonial__inner_invers{
+                column-gap: 26px;
+            }
+            .testimonial {
+                padding: 10px;
+            }
+            .testimonial__media img {
+                width: 40px;
+            }
+            .testimonila__name span {
+                font-size: 19px;
+            }
+            .star_mark svg {
+                width: 16px;
+            }
+            .testimonial {
+                row-gap: 1px;
+                min-width: 350px;
+            }
+            .testimonila__name {
+                margin-bottom: 0px;
+            }
+            .testimonials__wrapper {
+                column-gap: 12px;
+            }
+        }
+    </style>
+
+<section id="testimonial" class="section__testimonial">
+        <div class="page-testimonial-wrapper" style="background-color: {{ section.settings.section__bg }};">
+            <div class="testimonials__wrapper">
+
+                <div class="testimonial__inner">
+                {% for block in section.blocks %}
+                    <div class="testimonial">
+                        <div class="testimonial__media">
+                            {% if block.settings.show__img_client == true %}
+                            <img class="testimonial__img" src="{{ block.settings.client_img |  image_url  }}" alt="" width="80" height="80">
+                            {% endif %}
+                            <div class="meta__data">
+                                <div class="testimonila__name">
+                                    <span>{{ block.settings.client__name }}</span>
+                                </div>
+                                <div class="star_mark">
+                                    {% if block.settings.show_star == true %}
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial__content">
+                            {{ block.settings.massage }}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="testimonial__inner">
+                {% for block in section.blocks %}
+                    <div class="testimonial">
+                        <div class="testimonial__media">
+                            {% if block.settings.show__img_client == true %}
+                            <img class="testimonial__img" src="{{ block.settings.client_img |  image_url  }}" alt="" width="80" height="80">
+                            {% endif %}
+                            <div class="meta__data">
+                                <div class="testimonila__name">
+                                    <span>{{ block.settings.client__name }}</span>
+                                </div>
+                                <div class="star_mark">
+                                    {% if block.settings.show_star == true %}
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3646 0.77312L7.5304 6.51965L1.18926 7.44413C0.052104 7.60906 -0.403625 9.01097 0.421028 9.81392L5.0087 14.2844L3.92363 20.5995C3.72832 21.741 4.93058 22.596 5.93752 22.0622L11.6103 19.0804L17.283 22.0622C18.29 22.5917 19.4922 21.741 19.2969 20.5995L18.2118 14.2844L22.7995 9.81392C23.6242 9.01097 23.1684 7.60906 22.0313 7.44413L15.6901 6.51965L12.8559 0.77312C12.3481 -0.251186 10.8768 -0.264207 10.3646 0.77312Z" fill="#FFBB03"/>
+                                        </svg>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial__content">
+                            {{ block.settings.massage }}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            
+
+            </div>
+        </div>
+    </section>
+
+{% schema %}
+    {
+        "name": "Testimonial Side",
+        "class": "tp-testimoniathl-area",
+        "settings": [
+            {
+                "type": "select",
+                "id": "slide_direction",
+                "label": "Slide Direction",
+                "options": [
+                    {
+                    "value": "to_left",
+                    "label": "To Left"
+                    },
+                    {
+                    "value": "to_right",
+                    "label": "To Right"
+                    }
+                ],
+                "default": "to_left"
+            },
+            {
+                "type": "color",
+                "id": "section__bg",
+                "label": "Section Background",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "shadow_color",
+                "label": "Card Shadow Color",
+                "default": "#000"
+            },
+            {
+                "type": "color",
+                "id": "shadow_hover_color",
+                "label": "Card Shadow Hover Color",
+                "default": "#000"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide_testimonial",
+                "settings": [
+                    {
+                        "type": "checkbox",
+                        "id": "show__img_client",
+                        "label": "Show Image",
+                        "default": true
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "client_img",
+                        "label": "Client Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "client__name",
+                        "label": "Name",
+                        "default": "Client Name"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "massage",
+                        "label": "Review Massage",
+                        "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet amet placeat fugit laboriosam illum quidem nisi nobis voluptas mollitia a? Lorem,</p>"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "show_star",
+                        "label": "Show Star",
+                        "default": true
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Testimonial Side"
+            }
+        ]
+    }
+{% endschema %}

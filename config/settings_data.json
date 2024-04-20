@@ -1,0 +1,72 @@
+{
+  "current": {
+    "media_shadow_vertical_offset": 0,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "follow_label": "7500k Followers",
+          "follow_link": "#",
+          "call_field": "+(402) 763 282 46",
+          "menu_link": "main-menu",
+          "store_name_font_size": 20,
+          "store_name_font_colour": "#000000"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "460c8446-56c9-4658-afbe-b89f5fc2add8": {
+            "type": "logo_text",
+            "settings": {
+              "footer_logo": "shopify:\/\/shop_images\/logo.svg",
+              "footer_txt": "We are a team of designers and developers that create high quality WordPress",
+              "show_social_icon": true
+            }
+          },
+          "013f8274-6f20-45b9-bd60-132c725ab047": {
+            "type": "menu_link",
+            "settings": {
+              "link_heading": "My Account",
+              "footer_menu_link": "footer"
+            }
+          },
+          "21e0bb3b-036b-42b6-a632-a92be45af883": {
+            "type": "menu_link",
+            "settings": {
+              "link_heading": "Infomation",
+              "footer_menu_link": "footer-menu-two"
+            }
+          },
+          "0597e287-0332-4c8e-8cf2-31f242e46395": {
+            "type": "contuct",
+            "settings": {
+              "contuct_heading": "Talk To Us",
+              "label_text": "Got Questions? Call us",
+              "number": "+670 413 90 762",
+              "email": "shofy@support.com",
+              "location": "79 Sleepy Hollow St.Jamaica, New York 1432",
+              "location_url": "https:\/\/www.google.com\/maps\/place\/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA\/@44.3304966,-75.4552367,17z\/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4"
+            }
+          }
+        },
+        "block_order": [
+          "460c8446-56c9-4658-afbe-b89f5fc2add8",
+          "013f8274-6f20-45b9-bd60-132c725ab047",
+          "21e0bb3b-036b-42b6-a632-a92be45af883",
+          "0597e287-0332-4c8e-8cf2-31f242e46395"
+        ],
+        "settings": {
+          "footer_bottom_text": "<p>© 2023 All Rights Reserved  |  HTML Template by <a href=\"\/\" title=\"\/\">Themepure.<\/a><\/p>"
+        }
+      },
+      "cart-mini": {
+        "type": "cart-mini",
+        "settings": {
+          "free_shipping_id": 1000
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

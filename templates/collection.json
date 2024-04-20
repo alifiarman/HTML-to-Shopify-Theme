@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "banner": {
+      "type": "coollection-bradcumb",
+      "settings": {}
+    },
+    "bc794b43-771b-4a8f-af37-62ad4f92bec6": {
+      "type": "collection-main",
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner",
+    "bc794b43-771b-4a8f-af37-62ad4f92bec6"
+  ]
+}

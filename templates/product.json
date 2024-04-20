@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "bradcomb": {
+      "type": "bradcomb",
+      "settings": {}
+    },
+    "product-details": {
+      "type": "product-details",
+      "settings": {}
+    },
+    "infinity_slider_custom_Xa8Mpm": {
+      "type": "infinity-slider-custom",
+      "blocks": {
+        "slide_testimonial_cYrJxt": {
+          "type": "slide_testimonial",
+          "settings": {
+            "show__img_client": true,
+            "client_img": "shopify:\/\/shop_images\/user-4.jpg",
+            "client__name": "Client Name",
+            "massage": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet amet placeat fugit laboriosam illum quidem nisi nobis voluptas mollitia a? Lorem,<\/p>",
+            "show_star": true
+          }
+        },
+        "slide_testimonial_TUUHCF": {
+          "type": "slide_testimonial",
+          "settings": {
+            "show__img_client": true,
+            "client_img": "shopify:\/\/shop_images\/user-2.jpg",
+            "client__name": "Client Name",
+            "massage": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet amet placeat fugit laboriosam illum quidem nisi nobis voluptas mollitia a? Lorem,<\/p>",
+            "show_star": true
+          }
+        }
+      },
+      "block_order": [
+        "slide_testimonial_cYrJxt",
+        "slide_testimonial_TUUHCF"
+      ],
+      "settings": {
+        "slide_direction": "to_left",
+        "section__bg": "#fff",
+        "shadow_color": "#000",
+        "shadow_hover_color": "#000"
+      }
+    }
+  },
+  "order": [
+    "bradcomb",
+    "product-details",
+    "infinity_slider_custom_Xa8Mpm"
+  ]
+}

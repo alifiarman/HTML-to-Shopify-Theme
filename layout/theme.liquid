@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+
+    {{ content_for_header }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{ 'bootstrap.css' | asset_url | stylesheet_tag }}
+    {{ 'animate.css' | asset_url | stylesheet_tag }}
+    {{ 'swiper-bundle.css' | asset_url | stylesheet_tag }}
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+    {{ 'font-awesome-pro.css' | asset_url | stylesheet_tag }}
+    {{ 'flaticon_shofy.css' | asset_url | stylesheet_tag }}
+    {{ 'spacing.css' | asset_url | stylesheet_tag }}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.min.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+
+  </head>
+
+  <body class="{{template}}">
+
+      <div class="body-overlay"></div>
+      {% section 'header' %}
+      {% section 'cart-mini' %}
+      {% section 'product-quick-view' %}
+
+    
+    
+    <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+
+
+    <script>
+      var currency
+      window.currency = '{{cart.currency.symbol}}'
+    </script>
+
+  
+    {{  'jquery.js' | asset_url | script_tag }}
+    {{  'waypoints.js' | asset_url | script_tag }}
+    {{  'bootstrap-bundle.js' | asset_url | script_tag }}
+    {{  'meanmenu.js' | asset_url | script_tag }}
+    {{  'swiper-bundle.js' | asset_url | script_tag }}
+    {{  'slick.js' | asset_url | script_tag }}
+    {{  'range-slider.js' | asset_url | script_tag }}
+    {{  'magnific-popup.js' | asset_url | script_tag }}
+    {{  'nice-select.js' | asset_url | script_tag }}
+    {{  'purecounter.js' | asset_url | script_tag }}
+    {{  'countdown.js' | asset_url | script_tag }}
+    {{  'wow.js' | asset_url | script_tag }}
+    {{  'isotope-pkgd.js' | asset_url | script_tag }}
+    {{  'imagesloaded-pkgd.js' | asset_url | script_tag }}
+    {{  'ajax-form.js' | asset_url | script_tag }}
+    {{  'main.js' | asset_url | script_tag }}
+    {{  'custom.js' | asset_url | script_tag }}
+
+  </body>
+</html>

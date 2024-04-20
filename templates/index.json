@@ -1,0 +1,247 @@
+{
+  "sections": {
+    "71b82df0-5dce-4a90-8e1f-37aec37e6062": {
+      "type": "hero-slider",
+      "blocks": {
+        "84a33fad-0fcc-41ff-8158-8ffdc169ff2e": {
+          "type": "slider",
+          "settings": {
+            "heading": "New Arrivals 2023",
+            "label_heading": "The Clothing Collection",
+            "btn_txt": "Shop Collection",
+            "button_url": "",
+            "slider_img": "shopify:\/\/shop_images\/slider-1_457x_1126fcf2-d9d1-4bae-9375-4a9821836465.png"
+          }
+        },
+        "d155d0c9-a23a-419b-9d03-734a34c4f4f9": {
+          "type": "slider",
+          "settings": {
+            "heading": "New Arrivals 2023",
+            "label_heading": "The Clothing Collection",
+            "btn_txt": "Shop Collection",
+            "button_url": "#",
+            "slider_img": "shopify:\/\/shop_images\/slider-2_457x_2a77270b-67b4-4c4c-9b21-ad83bee5890e.webp"
+          }
+        },
+        "2822dc15-a8d0-421b-bf38-9fb466a7ad8b": {
+          "type": "slider",
+          "settings": {
+            "heading": "New Arrivals 2023",
+            "label_heading": "The Clothing Collection",
+            "btn_txt": "Shop Collection",
+            "button_url": "",
+            "slider_img": "shopify:\/\/shop_images\/slider-3_457x_d1963ad2-9e74-4907-8ffa-3d79c89b7a21.webp"
+          }
+        }
+      },
+      "block_order": [
+        "84a33fad-0fcc-41ff-8158-8ffdc169ff2e",
+        "d155d0c9-a23a-419b-9d03-734a34c4f4f9",
+        "2822dc15-a8d0-421b-bf38-9fb466a7ad8b"
+      ],
+      "settings": {}
+    },
+    "ac0b27df-4ba5-4cc7-bdb9-f3572d7f6784": {
+      "type": "banner",
+      "blocks": {
+        "452ad0a7-e240-42a8-97ad-1fd1af4002da": {
+          "type": "slider",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/banner-2.jpg",
+            "heading": "Satchel Tote<br>Crossbody Bags",
+            "text_link": "#",
+            "btn_txt": "Shop Now",
+            "button_url": "#"
+          }
+        },
+        "4cdd126c-d949-4c55-99ab-db6f76e9602a": {
+          "type": "slider",
+          "settings": {
+            "heading": "T-Shirt Tunic <br> Tops Blouse",
+            "text_link": "",
+            "btn_txt": "Shop Now",
+            "button_url": ""
+          }
+        },
+        "d6808746-e9a9-4ffd-b288-bd59bc9cc463": {
+          "type": "slider",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/banner-3.jpg",
+            "heading": "Men's Tennis<br> Walking Shoes",
+            "text_link": "",
+            "btn_txt": "Shop Now",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "452ad0a7-e240-42a8-97ad-1fd1af4002da",
+        "4cdd126c-d949-4c55-99ab-db6f76e9602a",
+        "d6808746-e9a9-4ffd-b288-bd59bc9cc463"
+      ],
+      "settings": {}
+    },
+    "63b595e1-8d50-4067-b2a9-d2c90762db96": {
+      "type": "product_slide",
+      "settings": {
+        "section_label": "Shop by Category",
+        "heading": "Popular on the Shofy store.",
+        "product_list__select": [
+          "black-leather-bag",
+          "blue-silk-tuxedo",
+          "chequered-red-shirt",
+          "classic-leather-jacket",
+          "classic-varsity-top",
+          "dark-denim-top"
+        ]
+      }
+    },
+    "88b031d5-0970-42f0-a663-9ef870e582c5": {
+      "type": "product-tab",
+      "blocks": {
+        "78218f45-7353-4e54-8d16-9d6fcbbd3546": {
+          "type": "product_tab",
+          "settings": {
+            "collection_id": "all-collection"
+          }
+        },
+        "bd9f506a-9f31-4a98-9406-13601bf2e751": {
+          "type": "product_tab",
+          "settings": {
+            "collection_id": "man"
+          }
+        },
+        "6dad9b5d-bace-4dc0-b034-2cf8e514bc00": {
+          "type": "product_tab",
+          "settings": {
+            "collection_id": "women"
+          }
+        }
+      },
+      "block_order": [
+        "78218f45-7353-4e54-8d16-9d6fcbbd3546",
+        "bd9f506a-9f31-4a98-9406-13601bf2e751",
+        "6dad9b5d-bace-4dc0-b034-2cf8e514bc00"
+      ],
+      "settings": {
+        "sub_heading": "All Product Shop",
+        "heading": "Customer Favorite Style Product"
+      }
+    },
+    "fa8e21ad-61e7-4efa-844c-bd20c44e712b": {
+      "type": "discover",
+      "settings": {
+        "section_heading": "Trending Arrivals",
+        "sub_heading": "More to Discover",
+        "product__lists": [
+          "chequered-red-shirt",
+          "blue-silk-tuxedo",
+          "classic-leather-jacket"
+        ],
+        "banner_img": "shopify:\/\/shop_images\/trending-banner.jpg",
+        "banner_text": "Short Sleeve Tunic <br> Tops Casual Swing",
+        "text_ulr": "#",
+        "button_text": "Explore More",
+        "button_url": "#"
+      }
+    },
+    "b62dfc67-2890-4f6d-aea6-e39693ef0025": {
+      "type": "best-selling-product",
+      "settings": {
+        "heading": "This Week's Featured",
+        "sub_heading": "Best Seller This Week’s",
+        "product__lists": [
+          "navy-sport-jacket",
+          "ocean-blue-shirt",
+          "red-sports-tee",
+          "dark-winter-jacket"
+        ],
+        "btn_txt": "Shop All Product",
+        "btn_url": ""
+      }
+    },
+    "7c22799f-424a-4ab5-8c20-445b2e73e17d": {
+      "type": "testimonial",
+      "blocks": {
+        "4bc7866c-ee51-4410-afb2-478d0ea5d6cc": {
+          "type": "testimonial",
+          "settings": {
+            "enable__star_icon": true,
+            "testimonial_msg": "How you use the city or town name is up to you. All results may be freely used in any work.",
+            "client_image": "shopify:\/\/shop_images\/user-4.jpg",
+            "client_name": "Theodore Handle",
+            "client_designation": "CO Founder"
+          }
+        },
+        "5b83934d-6afe-4f68-8688-14e3d4b1b5dd": {
+          "type": "testimonial",
+          "settings": {
+            "enable__star_icon": true,
+            "testimonial_msg": "How you use the city or town name is up to you. All results may be freely used in any work.",
+            "client_image": "shopify:\/\/shop_images\/user-2.jpg",
+            "client_name": "Alif Arman",
+            "client_designation": "CO Founder"
+          }
+        }
+      },
+      "block_order": [
+        "4bc7866c-ee51-4410-afb2-478d0ea5d6cc",
+        "5b83934d-6afe-4f68-8688-14e3d4b1b5dd"
+      ],
+      "settings": {
+        "section__title": "The Review Are In"
+      }
+    },
+    "26abb009-f53d-4b51-a525-95377968ad82": {
+      "type": "instagram",
+      "blocks": {
+        "38999c44-4d36-47ad-a675-048ae50cc9ff": {
+          "type": "grid_col",
+          "settings": {
+            "g_img": "shopify:\/\/shop_images\/insta-1.jpg"
+          }
+        },
+        "5e7271df-91ff-4ccc-9dfd-0241d9777558": {
+          "type": "grid_col",
+          "settings": {
+            "g_img": "shopify:\/\/shop_images\/insta-2.jpg"
+          }
+        },
+        "fcef31df-a081-4554-bc82-52549dd60d36": {
+          "type": "grid_col",
+          "settings": {
+            "g_img": "shopify:\/\/shop_images\/insta-3.jpg"
+          }
+        },
+        "ce105bfa-a2ec-45ab-b33c-91b0d6ec6c94": {
+          "type": "grid_col",
+          "settings": {
+            "g_img": "shopify:\/\/shop_images\/insta-4.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "38999c44-4d36-47ad-a675-048ae50cc9ff",
+        "5e7271df-91ff-4ccc-9dfd-0241d9777558",
+        "fcef31df-a081-4554-bc82-52549dd60d36",
+        "ce105bfa-a2ec-45ab-b33c-91b0d6ec6c94"
+      ],
+      "settings": {
+        "logo_img": "shopify:\/\/shop_images\/insta-icon.png",
+        "heading": "Instagram",
+        "sub_heading": "Follow Us on",
+        "heading_url": ""
+      }
+    }
+  },
+  "order": [
+    "71b82df0-5dce-4a90-8e1f-37aec37e6062",
+    "ac0b27df-4ba5-4cc7-bdb9-f3572d7f6784",
+    "63b595e1-8d50-4067-b2a9-d2c90762db96",
+    "88b031d5-0970-42f0-a663-9ef870e582c5",
+    "fa8e21ad-61e7-4efa-844c-bd20c44e712b",
+    "b62dfc67-2890-4f6d-aea6-e39693ef0025",
+    "7c22799f-424a-4ab5-8c20-445b2e73e17d",
+    "26abb009-f53d-4b51-a525-95377968ad82"
+  ]
+}

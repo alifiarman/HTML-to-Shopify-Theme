@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<style>  
+.testimonials__wrapper_page {
+    background: #000 !important;
+}
+.testimonials__inner_wrap {
+    padding: {{ section.settings.section__padding }}px 10px !important;
+}
+.testimonials_track {
+
+}
+.testimonial_wrap {
+    min-width: 350px;
+}
+.testimonial_wrap {
+    min-width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #1e1e1e;
+    color: #fff;
+    margin-right: 50px;
+}
+.testimonial_wrap span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+.review_massage p {
+    color: #fff;
+    font-size: 17px;
+}
+.review_massage {
+    margin-top: 20px;
+}
+ul.splide__pagination {
+display: none;
+}
+button.splide__arrow {
+display: none;
+}
+.testimonials_track:hover {
+    cursor: grab;
+}
+.testimonials_track:active {
+    cursor: grabbing; /* Change cursor when clicked */
+}
+</style>
+
+
+<div class="testimonials__wrapper_page splide">
+    <div class="testimonials_track splide__track">
+
+        <div class="testimonials__inner_wrap splide__list">
+            {% for block in section.blocks %}
+            <div class="testimonial_wrap splide__slide">
+                <span>{{ block.settings.heading }}</span>
+                <div class="review_massage">
+                    {{ block.settings.testimonial_text }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const splide = new Splide( '.splide', {
+        type   : 'loop',
+        drag   : 'free',
+        focus  : 'center',
+        perPage: 5,
+        breakpoints: {
+		640: {
+			perPage: 2,
+		    },
+        },
+        autoScroll: {
+            speed: 0.80,
+        },
+    } ).mount( window.splide.Extensions );
+
+  });
+</script>
+{% schema %}
+{
+    "name": "Infinity Testimonial",
+    "settings": [
+            {
+                "type": "range",
+                "id": "section__padding",
+                "min": 20,
+                "max": 80,
+                "step": 10,
+                "label": "Section Padding",
+                "default": 40
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "slide",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading",
+                        "default": "Heading will be here"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "testimonial_text",
+                        "label": "Testimonial Text",
+                        "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+                {
+                "name": "Infinity Testimonial"
+                }
+        ]
+}
+{% endschema %}
